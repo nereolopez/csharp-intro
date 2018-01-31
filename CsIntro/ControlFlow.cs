@@ -9,7 +9,7 @@ namespace CsIntro
             int adultAge = 18;
             Console.WriteLine("What is your age?");
             int age = Convert.ToInt32(Console.ReadLine());
-            if (age < 18)
+            if (age < adultAge)
             {
                 Console.WriteLine("Sorry, you are not allowed to use this app. Bye!");
             }
@@ -20,7 +20,7 @@ namespace CsIntro
             int adultAge = 18;
             Console.WriteLine("What is your age?");
             int age = Convert.ToInt32(Console.ReadLine());
-            if (age < 18)
+            if (age < adultAge)
             {
                 Console.WriteLine("Sorry, you are not allowed to use this app. Bye!");
             }
