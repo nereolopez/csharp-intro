@@ -49,9 +49,7 @@ namespace CsIntro
                 birthdate = DateTime.Parse(Console.ReadLine());
 
                 Console.WriteLine("Please, enter your gender('f' for female or 'm' for male)");
-                string strGender = Console.ReadLine();
-                gender = strGender[0];
-
+                gender = Convert.ToChar(Console.ReadLine());
 
                 Console.WriteLine("Please, enter your profession");
                 profession = Console.ReadLine();
