@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CsIntro
 {
@@ -11,10 +7,13 @@ namespace CsIntro
         static void Main(string[] args)
         {
             // About Types
-            TypesSamples();
+            //TypesSamples();
 
             // About Control Flow
             ControlFlowSamples();
+
+            // About ARRAYS
+            ArraySamples();
 
             Console.ReadKey();
         }
@@ -60,6 +59,27 @@ namespace CsIntro
             flowExercises.BuildUserProfile();
             flowExercises.ForLoop();
             flowExercises.WhileLoop();
+        }
+
+        static void ArraySamples()
+        {
+            // CLASS SAMPLES
+            var arrays = new Arrays();
+            arrays.ArrayDeclaration();
+            arrays.ArrayInitialization();
+            arrays.ImplicitlyTyped();
+            arrays.DelayedInitialization();
+            arrays.SettingGettingValues();
+            arrays.Properties();
+            arrays.Methods();
+            arrays.Loop();
+            arrays.Multidimensional();
+            arrays.JaggedArrays();
+
+            // CLASS EXERCISES
+            var exercises = new ArraysExercises();
+            exercises.Months();
+            exercises.Students();
         }
     }
 }

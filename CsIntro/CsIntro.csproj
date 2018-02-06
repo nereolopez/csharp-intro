@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arrays.cs" />
+    <Compile Include="ArraysExercises.cs" />
     <Compile Include="ControlFlow.cs" />
     <Compile Include="ControlFlowExercises.cs" />
     <Compile Include="Program.cs" />
