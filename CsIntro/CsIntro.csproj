@@ -46,6 +46,9 @@
     <Compile Include="ArraysExercises.cs" />
     <Compile Include="ControlFlow.cs" />
     <Compile Include="ControlFlowExercises.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="FunctionsExercises.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types.cs" />

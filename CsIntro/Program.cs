@@ -15,6 +15,12 @@ namespace CsIntro
             // About ARRAYS
             ArraySamples();
 
+            // About EXCEPTIONS
+            ExceptionSamples();
+
+            // About FUNCTIONS
+            FunctionSamples();
+
             Console.ReadKey();
         }
 
@@ -80,6 +86,41 @@ namespace CsIntro
             var exercises = new ArraysExercises();
             exercises.Months();
             exercises.Students();
+        }
+
+        static void ExceptionSamples()
+        {
+            // CLASS SAMPLES
+            var exceptions = new Exceptions();
+
+            // exceptions.WithoutTry(); // Comment this line once shown the example to make sure the app runs.
+            exceptions.TryCatch();
+            exceptions.TryCatchCatch();
+            exceptions.Finally();
+            exceptions.ThrowException();
+        }
+
+        static void FunctionSamples()
+        {
+            // CLASS SAMPLES
+            var functions = new Functions();
+
+            functions.Greet("Nereo");
+
+            int sum = functions.Add(5, 4);
+            Console.WriteLine("This is the sum the method returned: " + sum);
+            Console.WriteLine("This is the sum the Expression Body Definition returns: " + functions.ShortcutAdd(5, 4));
+
+            functions.CallFunctionWithOptionalParameters();
+            functions.NamedParameters();
+            functions.MethodOverloading();
+            functions.LocalFunction();
+
+            // CLASS EXERCISES
+            var exercises = new FunctionsExercises();
+            exercises.Functions();
+            exercises.UserProfile();
+            exercises.CarSearchBuilder();
         }
     }
 }
