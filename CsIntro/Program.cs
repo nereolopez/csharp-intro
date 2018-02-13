@@ -21,6 +21,9 @@ namespace CsIntro
             // About FUNCTIONS
             FunctionSamples();
 
+            // About COLLECTIONS
+            CollectionSamples();
+
             Console.ReadKey();
         }
 
@@ -121,6 +124,26 @@ namespace CsIntro
             exercises.Functions();
             exercises.UserProfile();
             exercises.CarSearchBuilder();
+        }
+
+        static void CollectionSamples()
+        {
+            // CLASS SAMPLES
+            var collections = new Collections();
+
+            collections.AddingElements();
+            collections.IteratingCollections();
+            collections.RemoveElement();
+            collections.ListInsert();
+            collections.ListCapacity();
+            collections.Dictionary();
+            collections.Queue();
+            collections.Stack();
+
+            // CLASS EXERCISES
+            var exercises = new CollectionsExercises();
+            exercises.ListExercise();
+            exercises.FavouriteSites();
         }
     }
 }
