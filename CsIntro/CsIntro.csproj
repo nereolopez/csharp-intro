@@ -51,6 +51,11 @@
     <Compile Include="Exceptions.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="FunctionsExercises.cs" />
+    <Compile Include="HelperClasses\Month.cs" />
+    <Compile Include="HelperClasses\TrainingCenter.cs" />
+    <Compile Include="HelperClasses\User.cs" />
+    <Compile Include="LinqExercises.cs" />
+    <Compile Include="LinqSamples.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types.cs" />

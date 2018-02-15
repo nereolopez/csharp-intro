@@ -24,6 +24,9 @@ namespace CsIntro
             // About COLLECTIONS
             CollectionSamples();
 
+            // About LINQ
+            LinqSamples();
+
             Console.ReadKey();
         }
 
@@ -144,6 +147,25 @@ namespace CsIntro
             var exercises = new CollectionsExercises();
             exercises.ListExercise();
             exercises.FavouriteSites();
+        }
+
+        static void LinqSamples()
+        {
+            // CLASS SAMPLES
+            var samples = new LinqSamples();
+            samples.FirstLinqSample();
+            samples.ForcingQueryExecution();
+            samples.Ordering();
+            samples.Grouping();
+            samples.Joining();
+            samples.OperatorMethods();
+
+            // CLASS EXERCISES
+            var exercises = new LinqExercises();
+            exercises.MonthsWithO();
+            exercises.MonthsBySeason();
+            exercises.SkipMonthsWithOddDays();
+            exercises.StudentsAverage();
         }
     }
 }
