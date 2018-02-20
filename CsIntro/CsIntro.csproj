@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Arrays.cs" />
     <Compile Include="ArraysExercises.cs" />
+    <Compile Include="Classes.cs" />
+    <Compile Include="ClassesExercises.cs" />
     <Compile Include="Collections.cs" />
     <Compile Include="CollectionsExercises.cs" />
     <Compile Include="ControlFlow.cs" />

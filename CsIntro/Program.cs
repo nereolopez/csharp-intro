@@ -27,6 +27,9 @@ namespace CsIntro
             // About LINQ
             LinqSamples();
 
+            // About CLASSES
+            ClassesSamples();
+
             Console.ReadKey();
         }
 
@@ -166,6 +169,17 @@ namespace CsIntro
             exercises.MonthsBySeason();
             exercises.SkipMonthsWithOddDays();
             exercises.StudentsAverage();
+        }
+
+        static void ClassesSamples()
+        {
+            // CLASS SAMPLES
+            var samples = new Classes();
+            samples.UseClasses();
+
+            // CLASS EXERCISES
+            var exercises = new ClassesExercises();
+            exercises.BuildUserProfile();
         }
     }
 }
