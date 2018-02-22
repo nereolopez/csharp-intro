@@ -30,6 +30,12 @@ namespace CsIntro
             // About CLASSES
             ClassesSamples();
 
+            // About ENCAPSULATION
+            EncapsulationSamples();
+
+            // About INHERITANCE
+            InheritanceSamples();
+
             Console.ReadKey();
         }
 
@@ -180,6 +186,23 @@ namespace CsIntro
             // CLASS EXERCISES
             var exercises = new ClassesExercises();
             exercises.BuildUserProfile();
+        }
+
+        static void EncapsulationSamples()
+        {
+            // CLASS SAMPLES
+            var samples = new Encapsulation();
+        }
+
+        static void InheritanceSamples()
+        {
+            // CLASS SAMPLES
+            var samples = new Inheritance();
+            samples.InheritanceSamples();
+
+            // CLASS EXERCISES
+            var exercises = new InheritanceExercises();
+            exercises.InheritanceExercise();
         }
     }
 }

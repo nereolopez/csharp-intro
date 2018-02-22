@@ -50,12 +50,15 @@
     <Compile Include="CollectionsExercises.cs" />
     <Compile Include="ControlFlow.cs" />
     <Compile Include="ControlFlowExercises.cs" />
+    <Compile Include="Encapsulation.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="FunctionsExercises.cs" />
     <Compile Include="HelperClasses\Month.cs" />
     <Compile Include="HelperClasses\TrainingCenter.cs" />
     <Compile Include="HelperClasses\User.cs" />
+    <Compile Include="Inheritance.cs" />
+    <Compile Include="InheritanceExercises.cs" />
     <Compile Include="LinqExercises.cs" />
     <Compile Include="LinqSamples.cs" />
     <Compile Include="Program.cs" />
