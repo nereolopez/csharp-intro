@@ -37,6 +37,18 @@ namespace CarRentalAgency.Logic
             this.ShowAddedRentalInformation(rental, customer, car);
         }
 
+        public void ShowAddedRentalInformation(Rental rental, Customer customer, Car car)
+        {
+            Console.Clear();
+            Console.WriteLine("The rental has been registered correctly. Here is the rental information:");
+            Console.WriteLine("Customer: {0}", customer.FullName);
+            Console.WriteLine("Start date: {0}", rental.StartDate);
+            Console.WriteLine("End date: {0}", rental.EndDate);
+            Console.WriteLine("Car: {0} {1} {2}", car.Maker, car.Model, car.EnergyType);
+            Console.WriteLine("Expected Fee: {0}", rental.Fee);
+            Console.WriteLine("Deposit: {0}", rental.DepositFee);
+        }
+
         private Customer SelectCustomer()
         {
             Customer selectedCustomer = null;
@@ -121,18 +133,6 @@ namespace CarRentalAgency.Logic
             }
 
             return Convert.ToDateTime(selectedDate);
-        }
-
-        public void ShowAddedRentalInformation(Rental rental, Customer customer, Car car)
-        {
-            Console.Clear();
-            Console.WriteLine("The rental has been registered correctly. Here is the rental information:");
-            Console.WriteLine("Customer: {0}", customer.FullName);
-            Console.WriteLine("Start date: {0}", rental.StartDate);
-            Console.WriteLine("End date: {0}", rental.EndDate);
-            Console.WriteLine("Car: {0} {1} {2}", car.Maker, car.Model, car.EnergyType);
-            Console.WriteLine("Expected Fee: {0}", rental.Fee);
-            Console.WriteLine("Deposit: {0}", rental.DepositFee);
         }
 
         private int AskForCreditCardNumber()
