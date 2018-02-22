@@ -4,7 +4,6 @@ namespace CarRentalAgency.Model
 {
     public class Car : BaseModel
     {
-        private Guid id;
         private string maker;
         private string model;
         private EnergyType energyType;
