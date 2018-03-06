@@ -59,8 +59,11 @@
     <Compile Include="HelperClasses\User.cs" />
     <Compile Include="Inheritance.cs" />
     <Compile Include="InheritanceExercises.cs" />
+    <Compile Include="InterfaceExercises.cs" />
+    <Compile Include="Interfaces.cs" />
     <Compile Include="LinqExercises.cs" />
     <Compile Include="LinqSamples.cs" />
+    <Compile Include="Polymorphism.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types.cs" />

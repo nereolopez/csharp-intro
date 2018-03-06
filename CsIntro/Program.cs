@@ -36,6 +36,12 @@ namespace CsIntro
             // About INHERITANCE
             InheritanceSamples();
 
+            // About POLYMORPHISM
+            PolymorphismSamples();
+
+            // About INTERFACES
+            InterfacesSamples();
+
             Console.ReadKey();
         }
 
@@ -203,6 +209,27 @@ namespace CsIntro
             // CLASS EXERCISES
             var exercises = new InheritanceExercises();
             exercises.InheritanceExercise();
+        }
+
+        static void PolymorphismSamples()
+        {
+            // CLASS SAMPLES
+            var samples = new Polymorphism();
+            samples.PolymorphismSample();
+        }
+
+        static void InterfacesSamples()
+        {
+            // CLASS SAMPLES
+            var samples = new Interfaces();
+            samples.InterfaceSample();
+            samples.PropertyFromInterface();
+            Console.WriteLine("Property randomly filled implemented from the interface: {0}", samples.RandomNumber);
+            samples.MethodFromSecond();
+
+            // CLASS EXERCISES
+            var exercises = new InterfaceExercises();
+            exercises.PetProgram();
         }
     }
 }
