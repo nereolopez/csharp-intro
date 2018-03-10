@@ -42,6 +42,9 @@ namespace CsIntro
             // About INTERFACES
             InterfacesSamples();
 
+            // About FILE SYSTEM
+            FileSystemSamples();
+
             Console.ReadKey();
         }
 
@@ -230,6 +233,16 @@ namespace CsIntro
             // CLASS EXERCISES
             var exercises = new InterfaceExercises();
             exercises.PetProgram();
+        }
+
+        static void FileSystemSamples()
+        {
+            // CLASS SAMPLES
+            var samples = new FileSystemSamples();
+            samples.CreateDirectory();
+            samples.CreateFile();
+            samples.WriteIntoFile();
+            samples.ReadLinesFromFile();
         }
     }
 }

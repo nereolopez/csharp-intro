@@ -52,6 +52,7 @@
     <Compile Include="ControlFlowExercises.cs" />
     <Compile Include="Encapsulation.cs" />
     <Compile Include="Exceptions.cs" />
+    <Compile Include="FileSystemSamples.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="FunctionsExercises.cs" />
     <Compile Include="HelperClasses\Month.cs" />
