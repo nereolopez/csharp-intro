@@ -32,16 +32,18 @@ namespace CarRentalAgency.Model
             this.isAvailable = true;
         }
 
-        public Car(string maker, string model, EnergyType energyType, decimal pricePerDay, int maxKmsPerDay, decimal pricePerExtraKm, decimal depositFee, bool isAvailable = false, string id = null)
+        public Car(string maker, string model, EnergyType energyType, int kms, decimal pricePerDay, int maxKmsPerDay, decimal pricePerExtraKm, decimal depositFee, bool isAvailable = false, string id = null)
             : this(id) // to call the parameterless constructor which will default some properties.
         {
             this.maker = maker;
             this.model = model;
             this.energyType = energyType;
+            this.kms = kms;
             this.pricePerDay = pricePerDay;
             this.maxKmsPerDay = maxKmsPerDay;
             this.pricePerExtraKm = pricePerExtraKm;
             this.depositFee = depositFee;
+            this.isAvailable = isAvailable;
         }
 
         public void Block()
@@ -51,10 +53,11 @@ namespace CarRentalAgency.Model
 
         public override string ToString()
         {
-            return string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}",
+            return string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
                    this.Maker,
                    this.Model,
                    this.EnergyType,
+                   this.Kms,
                    this.PricePerDay,
                    this.MaxKmsPerDay,
                    this.PricePerExtraKm,

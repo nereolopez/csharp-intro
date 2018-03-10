@@ -122,10 +122,29 @@ namespace CarRentalAgency.Model
                    this.fee,
                    this.depositFee,
                    this.creditCardNumber,
+                   this.status.ToString(),
                    this.carDamaged,
                    this.carFinalKms,
                    this.extraKmsFee,
                    this.finalTotal);
+        }
+
+        public static Rental Parse(string[] rentalLine)
+        {
+            return new Rental(rentalLine[0],
+                                rentalLine[1],
+                                rentalLine[2],
+                                Convert.ToDateTime(rentalLine[3]),
+                                Convert.ToDateTime(rentalLine[4]),
+                                Convert.ToInt32(rentalLine[5]),
+                                Convert.ToDecimal(rentalLine[6]),
+                                Convert.ToDecimal(rentalLine[7]),
+                                Convert.ToInt32(rentalLine[8]),
+                                (RentalStatus)Enum.Parse(typeof(RentalStatus), rentalLine[9]),
+                                Convert.ToBoolean(rentalLine[10]),
+                                Convert.ToInt32(rentalLine[11]),
+                                Convert.ToDecimal(rentalLine[12]),
+                                Convert.ToDecimal(rentalLine[13]));
         }
 
         private void SetFee(decimal pricePerDay)
