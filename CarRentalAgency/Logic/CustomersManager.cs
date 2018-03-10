@@ -7,13 +7,22 @@ namespace CarRentalAgency.Logic
 {
     class CustomersManager
     {
-        CustomerService customerService;
+        // Commented Out in Part II
+        // CustomerService customerService;
+
+        // Commented out on Part III
+        // Added on Part II
+        CustomerFileService customerService;
 
         public List<Customer> Customers => this.customerService.GetCustomers();
 
         public CustomersManager()
         {
-            this.customerService = new CustomerService();
+            // Commented out on Part II
+            // this.customerService = new CustomerService();
+
+            // Added on Part II
+            this.customerService = new CustomerFileService();
         }
 
         public void ShowCustomers()

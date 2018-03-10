@@ -1,4 +1,5 @@
 ﻿using CarRentalAgency.Model;
+using CarRentalAgency.Services;
 using System;
 using System.Collections.Generic;
 
@@ -9,14 +10,24 @@ namespace CarRentalAgency.Logic
         CustomersManager customersManager;
         CarsManager carsManager;
 
-        List<Rental> rentals;
+        // Commented out in Part II
+        // List<Rental> rentals;
+
+        // Added in Part II
+        private RentalFileService rentalService;
+        public List<Rental> Rentals => this.rentalService.GetRentals();
+        public List<Rental> ActiveRentals => this.rentalService.GetActiveRentals();
 
         public RentalsManager(CustomersManager customersManager, CarsManager carsManager)
         {
             this.customersManager = customersManager;
             this.carsManager = carsManager;
 
-            this.rentals = new List<Rental>();
+            // Commented out on Part II
+            // this.rentals = new List<Rental>();
+
+            // Added in Part II
+            this.rentalService = new RentalFileService();
         }
 
         public void AddRental()
@@ -31,7 +42,13 @@ namespace CarRentalAgency.Logic
             var cardNumber = this.AskForCreditCardNumber();
 
             var rental = new Rental(car, customer.Id, startDate, endDate, cardNumber);
-            this.rentals.Add(rental);
+
+            // Commented out on Part II
+            // this.rentals.Add(rental);
+
+            // Added on Part II
+            this.rentalService.AddRental(rental);
+
             this.carsManager.BlockCar(car.Id);
 
             this.ShowAddedRentalInformation(rental, customer, car);

@@ -8,14 +8,22 @@ namespace CarRentalAgency.Logic
 {
     public class CarsManager
     {
-        CarService carService;
+        // Commented on Part II
+        // CarService carService;
+
+        // Added on Part II
+        CarFileService carService;
 
         public List<Car> Cars => this.carService.GetCars();
         public List<Car> AvailableCars => this.Cars.Where(car => car.IsAvailable).ToList();
 
         public CarsManager()
         {
-            this.carService = new CarService();
+            // Commented Out in Part II
+            // this.carService = new CarService();
+
+            // Added on Part II
+            this.carService = new CarFileService();
         }
 
         public void ShowCars()
