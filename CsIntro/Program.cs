@@ -45,6 +45,12 @@ namespace CsIntro
             // About FILE SYSTEM
             FileSystemSamples();
 
+            // About ASYNC
+            AsyncSamples();
+
+            // About DEPENDENCY INJECTION
+            DISamples();
+
             Console.ReadKey();
         }
 
@@ -243,6 +249,19 @@ namespace CsIntro
             samples.CreateFile();
             samples.WriteIntoFile();
             samples.ReadLinesFromFile();
+        }
+
+        static void AsyncSamples()
+        {
+            var samples = new AsyncSamples();
+            samples.InputOutputBoundCode();
+            samples.CpuBoundCode();
+        }
+
+        static void DISamples()
+        {
+            var samples = new DependencyInjectionSamples();
+            samples.Sample();
         }
     }
 }
