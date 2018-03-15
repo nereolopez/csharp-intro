@@ -1,9 +1,11 @@
 ﻿using CarRentalAgency.Model;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CarRentalAgency.Services
 {
-    public class CarService
+    // Interface implementation added on Part III
+    public class CarService : ICarService
     {
         List<Car> cars;
 
@@ -13,9 +15,14 @@ namespace CarRentalAgency.Services
             this.CreateHardcodedCars();
         }
 
-        public List<Car> GetCars()
+        public List<Car> GetCars(bool refresh = false)
         {
             return this.cars;
+        }
+
+        public Car GetCar(string carId)
+        {
+            return this.cars.FirstOrDefault(car => car.Id == carId);
         }
 
         public void BlockCar(string carId)

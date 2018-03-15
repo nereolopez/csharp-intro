@@ -5,8 +5,8 @@ using System.IO;
 
 namespace CarRentalAgency.Services
 {
-    // Class added on Part II of the series
-    class CustomerFileService
+    // Interface implementation added on Part III
+    class CustomerFileService : ICustomerService
     {
         private const string filePath = @"c:\test\customers.txt";
 

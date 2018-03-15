@@ -44,6 +44,9 @@
   <ItemGroup>
     <Compile Include="Logic\CarsManager.cs" />
     <Compile Include="Logic\CustomersManager.cs" />
+    <Compile Include="Logic\ICarsManager.cs" />
+    <Compile Include="Logic\ICustomersManager.cs" />
+    <Compile Include="Logic\IRentalsManager.cs" />
     <Compile Include="Logic\RentalsManager.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\Car.cs" />
@@ -57,6 +60,9 @@
     <Compile Include="Services\CarService.cs" />
     <Compile Include="Services\CustomerFileService.cs" />
     <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\ICarService.cs" />
+    <Compile Include="Services\ICustomerService.cs" />
+    <Compile Include="Services\IRentalService.cs" />
     <Compile Include="Services\RentalFileService.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,8 +6,8 @@ using System.Linq;
 
 namespace CarRentalAgency.Services
 {
-    // Class added on Part II of the series
-    public class CarFileService
+    // Interface implementation added on Part III
+    public class CarFileService : ICarService
     {
         private const string filePath = @"c:\test\cars.txt";
 

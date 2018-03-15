@@ -5,24 +5,31 @@ using System.Collections.Generic;
 
 namespace CarRentalAgency.Logic
 {
-    class CustomersManager
+    // Interface implemented on Part III
+    public class CustomersManager : ICustomersManager
     {
         // Commented Out in Part II
         // CustomerService customerService;
 
         // Commented out on Part III
         // Added on Part II
-        CustomerFileService customerService;
+        //CustomerFileService customerService;
+
+        // Added on Part III
+        ICustomerService customerService;
 
         public List<Customer> Customers => this.customerService.GetCustomers();
 
-        public CustomersManager()
-        {
-            // Commented out on Part II
-            // this.customerService = new CustomerService();
+        // Constructor replaced on Part III
+        //public CustomersManager()
+        //{
+        //    this.customerService = new CustomerFileService();
+        //}
 
-            // Added on Part II
-            this.customerService = new CustomerFileService();
+        // Added on Part III
+        public CustomersManager(ICustomerService customerService)
+        {
+            this.customerService = customerService;
         }
 
         public void ShowCustomers()

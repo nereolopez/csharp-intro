@@ -5,29 +5,45 @@ using System.Collections.Generic;
 
 namespace CarRentalAgency.Logic
 {
-    class RentalsManager
+    // Interface implemented on Part III
+    public class RentalsManager : IRentalsManager
     {
-        CustomersManager customersManager;
-        CarsManager carsManager;
+        // Commented out on Part III
+        // CustomersManager customersManager;
+        // CarsManager carsManager;
 
-        // Commented out in Part II
-        // List<Rental> rentals;
+        // Added on Part III
+        IRentalService rentalService;
+        ICarsManager carsManager;
+        ICustomersManager customersManager;
 
         // Added in Part II
-        private RentalFileService rentalService;
         public List<Rental> Rentals => this.rentalService.GetRentals();
         public List<Rental> ActiveRentals => this.rentalService.GetActiveRentals();
 
-        public RentalsManager(CustomersManager customersManager, CarsManager carsManager)
+        // RentalFileService rentalService; // Commented out on Part III
+
+        // Commented out on Part II
+        // List<Rental> rentals;
+
+        // Constructor replaced on Part III
+        //public RentalsManager(CustomersManager customersManager, CarsManager carsManager) {
+        //    this.customersManager = customersManager;
+        //    this.carsManager = carsManager;
+
+        //    // Commented out on Part II
+        //    // this.rentals = new List<Rental>();
+
+        //    // Added in Part II
+        //    this.rentalService = new RentalFileService();
+        //}
+
+        // Added on Part III
+        public RentalsManager(ICustomersManager customersManager, ICarsManager carsManager, IRentalService rentalService)
         {
             this.customersManager = customersManager;
             this.carsManager = carsManager;
-
-            // Commented out on Part II
-            // this.rentals = new List<Rental>();
-
-            // Added in Part II
-            this.rentalService = new RentalFileService();
+            this.rentalService = rentalService;
         }
 
         public void AddRental()
@@ -54,7 +70,52 @@ namespace CarRentalAgency.Logic
             this.ShowAddedRentalInformation(rental, customer, car);
         }
 
-        public void ShowAddedRentalInformation(Rental rental, Customer customer, Car car)
+        public void CloseRental()
+        {
+            Rental rentalToClose = null;
+            int selectedRentalIndex;
+            bool validOption = false;
+
+            while (validOption == false)
+            {
+                this.ShowActiveRentals();
+                Console.WriteLine("Select the rental to close");
+
+                try
+                {
+                    selectedRentalIndex = Convert.ToInt32(Console.ReadLine());
+                    selectedRentalIndex--;
+                    if (selectedRentalIndex < this.ActiveRentals.Count)
+                    {
+                        rentalToClose = this.ActiveRentals[selectedRentalIndex];
+                        validOption = true;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please select a valid option (from 1 to {0}", this.ActiveRentals.Count);
+                }
+            }
+
+            Console.WriteLine("Does the returned car have any damage? (y/n)");
+            bool carIsDamaged = Console.ReadLine().ToUpper() == "Y";
+
+            this.CloseRental(rentalToClose, carIsDamaged);
+        }
+
+        /// <summary>
+        /// Closes, Persists and returns the closed Rental
+        /// </summary>
+        /// <param name="rental"></param>
+        /// <returns></returns>
+        public Rental CloseRental(Rental rental, bool carIsDamaged)
+        {
+            // ToDo implement based on the tests
+
+            return rental;
+        }
+
+        private void ShowAddedRentalInformation(Rental rental, Customer customer, Car car)
         {
             Console.Clear();
             Console.WriteLine("The rental has been registered correctly. Here is the rental information:");
@@ -105,7 +166,7 @@ namespace CarRentalAgency.Logic
 
             while (validOption == false)
             {
-                var cars = this.carsManager.Cars;
+                var availableCars = this.carsManager.AvailableCars;
                 this.carsManager.ShowAvailableCars();
                 Console.WriteLine("Select the car for the rental");
 
@@ -113,15 +174,15 @@ namespace CarRentalAgency.Logic
                 {
                     selectedCarIndex = Convert.ToInt32(Console.ReadLine());
                     selectedCarIndex--;
-                    if (selectedCarIndex < cars.Count)
+                    if (selectedCarIndex < availableCars.Count)
                     {
-                        selectedCar = cars[selectedCarIndex];
+                        selectedCar = availableCars[selectedCarIndex];
                         validOption = true;
                     }
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Please select a valid option (from 1 to {0}", cars.Count);
+                    Console.WriteLine("Please select a valid option (from 1 to {0}", availableCars.Count);
                 }
             }
 
@@ -172,6 +233,19 @@ namespace CarRentalAgency.Logic
             }
 
             return creditCardNumber;
+        }
+
+        private void ShowActiveRentals()
+        {
+            Console.Clear();
+            Console.WriteLine("These are the current active rentals");
+            int index = 0;
+            foreach (var rental in this.ActiveRentals)
+            {
+                index++;
+                // Ideally, we would get the customer name based on the ID and the Car Maker and Brand.
+                Console.WriteLine("{0}. {1} - {2}", index, rental.CustomerId, rental.CarId);
+            }
         }
     }
 }

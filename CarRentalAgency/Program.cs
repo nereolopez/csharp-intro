@@ -1,19 +1,32 @@
 ﻿using CarRentalAgency.Logic;
+using CarRentalAgency.Services;
 using System;
 
 namespace CarRentalAgency
 {
     class Program
     {
-        static CarsManager carsManager;
-        static CustomersManager customersManager;
-        static RentalsManager rentalsManager;
+        // Commented out on Part III
+        //static CarsManager carsManager;
+        // static CustomersManager customersManager;
+        // static RentalsManager rentalsManager;
+
+        // Added on Part III
+        static ICarsManager carsManager;
+        static ICustomersManager customersManager;
+        static IRentalsManager rentalsManager;
 
         static void Main(string[] args)
         {
-            carsManager = new CarsManager();
-            customersManager = new CustomersManager();
-            rentalsManager = new RentalsManager(customersManager, carsManager);
+            // Commented out on Part III
+            // carsManager = new CarsManager();
+            // customersManager = new CustomersManager();
+            // rentalsManager = new RentalsManager(customersManager, carsManager);
+
+            // Added on Part III (yes, the best would be not to instantiate the types below here but in a container instead, which we are not using so far...)
+            carsManager = new CarsManager(new CarFileService());
+            customersManager = new CustomersManager(new CustomerFileService());
+            rentalsManager = new RentalsManager(customersManager, carsManager, new RentalFileService());
 
             MainMenu();
         }
@@ -28,7 +41,7 @@ namespace CarRentalAgency
                 Console.WriteLine("RENTAL PROGRAM MAIN MENU");
                 Console.WriteLine("1. Manage Cars");
                 Console.WriteLine("2. Manage Customer");
-                Console.WriteLine("3. Manage Rentals (Add rental)");
+                Console.WriteLine("3. Manage Rentals");
                 Console.WriteLine("4. Exit");
                 Console.WriteLine("Write the number of the actinon you want to take:");
 
@@ -47,7 +60,7 @@ namespace CarRentalAgency
                             WaitForUserInput();
                             break;
                         case 3:
-                            rentalsManager.AddRental();
+                            RentalsMenu();
                             WaitForUserInput();
                             break;
                         case 4:
@@ -149,7 +162,50 @@ namespace CarRentalAgency
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Please enter a valid option (a number from 1 to 4.");
+                    Console.WriteLine("Please enter a valid option (a number from 1 to 3.");
+                    option = 0;
+                }
+            }
+        }
+
+        static void RentalsMenu()
+        {
+            int option = 0;
+
+            while (option != 3)
+            {
+                Console.Clear();
+                Console.WriteLine("CUSTOMERS MENU");
+                Console.WriteLine("1. New Rental");
+                Console.WriteLine("2. Close Rental");
+                Console.WriteLine("3. Back to main menu");
+                Console.WriteLine("Write the number of the actinon you want to take:");
+
+                try
+                {
+                    option = Convert.ToInt32(Console.ReadLine());
+
+                    switch (option)
+                    {
+                        case 1:
+                            rentalsManager.AddRental();
+                            WaitForUserInput();
+                            break;
+                        case 2:
+                            // Added in Part IV
+                            rentalsManager.CloseRental();
+                            WaitForUserInput();
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            option = 0;
+                            break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter a valid option (a number from 1 to 3.");
                     option = 0;
                 }
             }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace CarRentalAgency.Services
 {
-    class CustomerService
+    // Interface implementation added on Part III
+    class CustomerService : ICustomerService
     {
         List<Customer> customers;
 
@@ -13,7 +14,7 @@ namespace CarRentalAgency.Services
             this.CreateHardcodedCustomers();
         }
 
-        public List<Customer> GetCustomers()
+        public List<Customer> GetCustomers(bool refresh = false)
         {
             return this.customers;
         }

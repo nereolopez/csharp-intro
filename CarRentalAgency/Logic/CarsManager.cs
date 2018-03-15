@@ -6,24 +6,36 @@ using System.Linq;
 
 namespace CarRentalAgency.Logic
 {
-    public class CarsManager
+    // Interface implemented on Part III
+    public class CarsManager : ICarsManager
     {
         // Commented on Part II
         // CarService carService;
 
+        // Commented out on PART III
         // Added on Part II
-        CarFileService carService;
+        //CarFileService carService;
+
+        // Added on Part III
+        ICarService carService;
 
         public List<Car> Cars => this.carService.GetCars();
         public List<Car> AvailableCars => this.Cars.Where(car => car.IsAvailable).ToList();
 
-        public CarsManager()
-        {
-            // Commented Out in Part II
-            // this.carService = new CarService();
+        // Constructor Replaced on Part III
+        //public CarsManager()
+        //{
+        //    // Commented Out in Part II
+        //    // this.carService = new CarService();
 
-            // Added on Part II
-            this.carService = new CarFileService();
+        //    // Added on Part II
+        //    this.carService = new CarFileService();
+        //}
+
+        // Constructor Introduced in Part III
+        public CarsManager(ICarService carService)
+        {
+            this.carService = carService;
         }
 
         public void ShowCars()
