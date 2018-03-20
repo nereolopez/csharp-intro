@@ -8,3 +8,9 @@
 /packages/Newtonsoft.Json.11.0.1/LICENSE.md
 /packages/Newtonsoft.Json.11.0.1/Newtonsoft.Json.11.0.1.nupkg
 /packages/Newtonsoft.Json.11.0.1
+/CsIntro/bin/Debug
+/MyClasses/obj/Debug
+/MyClasses.Tests/bin/Debug
+/MyClasses.Tests/obj/Debug
+/packages
+/MyClasses/bin/Debug
