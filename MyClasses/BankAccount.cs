@@ -5,7 +5,8 @@ namespace MyClasses
     public class BankAccount
     {
         private const decimal operationLimit = 2000;
-        private decimal balance;
+        private const decimal minimumBalanceForCreditElegibility = 30000;
+        protected decimal balance;
 
         public decimal Balance => this.balance;
 
@@ -28,6 +29,11 @@ namespace MyClasses
                 throw new InvalidOperationException();
 
             this.balance -= amount;
+        }
+
+        public bool IsElegibleForCredit()
+        {
+            return this.balance >= minimumBalanceForCreditElegibility;
         }
     }
 }

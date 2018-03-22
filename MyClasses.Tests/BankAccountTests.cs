@@ -75,5 +75,35 @@ namespace MyClasses.Tests
             var testee = new BankAccount(initialBalance);
             testee.PutMoney(amount);
         }
+
+        [TestMethod]
+        public void IsElegibleForCreditReteurnsTrueTest()
+        {
+            // Arrange
+            const decimal moneyToPut = 30000;
+            var account = new BankAccount();
+
+            // Act
+            account.PutMoney(moneyToPut);
+            bool result = account.IsElegibleForCredit();
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void IsElegibleForCreditReteurnsFalseTest()
+        {
+            // Arrange
+            const decimal moneyToPut = 29999;
+            var account = new BankAccount();
+
+            // Act
+            account.PutMoney(moneyToPut);
+            bool result = account.IsElegibleForCredit();
+
+            // Assert
+            Assert.IsFalse(result);
+        }
     }
 }

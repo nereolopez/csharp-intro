@@ -49,8 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BankAccountTests.cs" />
+    <Compile Include="CorporateBankAccountTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StrictBankAccountTests.cs" />
+    <Compile Include="PureFunctionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
