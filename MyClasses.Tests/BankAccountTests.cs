@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace MyClasses.Tests
 {
@@ -104,6 +105,31 @@ namespace MyClasses.Tests
 
             // Assert
             Assert.IsFalse(result);
+        }
+
+        [DataTestMethod]
+        [DataRow(1000, "Bad")]
+        [DataRow(5000, "Average")]
+        [DataRow(20000, "Good")]
+        [DataRow(60000, "Excellent")]
+        public void GetFinancialScoreTests(int money, string expected)
+        {
+            // Arrange
+            decimal balance = Convert.ToDecimal(money);
+
+            var mockFinancialService = new Mock<IFinancialService>();
+            mockFinancialService.Setup(x => x.GetFinancialScore(balance)).Returns(expected);
+
+            var account = new BankAccount(mockFinancialService.Object);
+            account.PutMoney(balance);
+
+            // Act
+            string actual = account.GetFinancialScore();
+
+            // Assert
+            Assert.AreEqual(actual, expected);
+
+            mockFinancialService.VerifyAll();
         }
     }
 }

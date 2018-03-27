@@ -4,15 +4,23 @@ namespace MyClasses
 {
     public class BankAccount
     {
+        private IFinancialService financialService;
         private const decimal operationLimit = 2000;
         private const decimal minimumBalanceForCreditElegibility = 30000;
         protected decimal balance;
 
         public decimal Balance => this.balance;
 
-        public BankAccount(decimal initialBalance = 0)
+        // Constructor added to avoid breaking the tests previous to the ones where we manage dependencies 
+        public BankAccount(decimal balance = 0)
         {
-            this.balance = initialBalance;
+            this.balance = balance;            
+        }
+
+        public BankAccount(IFinancialService financialService, decimal balance = 0)
+        {
+            this.financialService = financialService;
+            this.balance = balance;
         }
 
         public void PutMoney(decimal amount)
@@ -34,6 +42,11 @@ namespace MyClasses
         public bool IsElegibleForCredit()
         {
             return this.balance >= minimumBalanceForCreditElegibility;
+        }
+
+        public string GetFinancialScore()
+        {
+            return this.financialService.GetFinancialScore(this.balance);
         }
     }
 }
