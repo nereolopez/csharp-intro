@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyClasses", "MyClasses\MyCl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyClasses.Tests", "MyClasses.Tests\MyClasses.Tests.csproj", "{16B64D65-82B7-4733-9506-0F969A3C2126}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{53424F58-6A2F-403E-8503-41DD973E6B8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalAgency.Tests", "CarRentalAgency.Tests\CarRentalAgency.Tests.csproj", "{A8597229-0D58-4589-B06E-F6C84AE35D3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +37,16 @@ Global
 		{16B64D65-82B7-4733-9506-0F969A3C2126}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16B64D65-82B7-4733-9506-0F969A3C2126}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16B64D65-82B7-4733-9506-0F969A3C2126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8597229-0D58-4589-B06E-F6C84AE35D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8597229-0D58-4589-B06E-F6C84AE35D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8597229-0D58-4589-B06E-F6C84AE35D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8597229-0D58-4589-B06E-F6C84AE35D3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{16B64D65-82B7-4733-9506-0F969A3C2126} = {53424F58-6A2F-403E-8503-41DD973E6B8F}
+		{A8597229-0D58-4589-B06E-F6C84AE35D3D} = {53424F58-6A2F-403E-8503-41DD973E6B8F}
 	EndGlobalSection
 EndGlobal
