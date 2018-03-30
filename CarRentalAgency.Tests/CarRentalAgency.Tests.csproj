@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\CarsManagerTests.cs" />
+    <Compile Include="Logic\RentalsManagerTests.cs" />
     <Compile Include="Model\CarTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
